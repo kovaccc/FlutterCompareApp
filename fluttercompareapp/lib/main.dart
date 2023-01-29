@@ -16,6 +16,8 @@ import 'common/utils/q_logger.dart';
 import 'generated/l10n.dart';
 import 'main/app_environment.dart';
 import 'theme/themes.dart' as themes;
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> mainCommon(AppEnvironment environment) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +26,9 @@ Future<void> mainCommon(AppEnvironment environment) async {
     logPrinter: !EnvInfo.isProduction || kDebugMode
         ? StreamPrinter(const PrettyDeveloperPrinter())
         : const DisabledPrinter(),
+  );
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
   void runAppCallback() => runApp(ProviderScope(
         observers: [CustomProviderObserver()],

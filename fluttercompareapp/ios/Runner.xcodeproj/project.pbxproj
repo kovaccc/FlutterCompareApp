@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		036AD7223A6AAA6F349F2AE0 /* stagingProfile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B6F8E243CC7F693055365B80 /* stagingProfile.xcconfig */; };
+		04089AC647A793993C7E4B5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6C51B4E51B52EFC51A679A8 /* GoogleService-Info.plist */; };
 		0B227FBF361D3CC95FA9E00C /* prodLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF0B29E865295212B6B1ED0 /* prodLaunchScreen.storyboard */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		1F993D37B459583C50F020DF /* devRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA541BCD5A999D0A0CB55404 /* devRelease.xcconfig */; };
@@ -65,6 +66,7 @@
 		B6F8E243CC7F693055365B80 /* stagingProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = stagingProfile.xcconfig; path = Flutter/stagingProfile.xcconfig; sourceTree = "<group>"; };
 		CCF0B29E865295212B6B1ED0 /* prodLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = prodLaunchScreen.storyboard; path = Runner/prodLaunchScreen.storyboard; sourceTree = "<group>"; };
 		D65909D7FF910F92D28B3A3C /* devDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = devDebug.xcconfig; path = Flutter/devDebug.xcconfig; sourceTree = "<group>"; };
+		D6C51B4E51B52EFC51A679A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Runner/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E339A46FE519749E5E515DCB /* prodRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = prodRelease.xcconfig; path = Flutter/prodRelease.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				9891C12D6D322E2376B65839 /* devLaunchScreen.storyboard */,
 				187535E1F106FCA78D75EC35 /* stagingLaunchScreen.storyboard */,
 				CCF0B29E865295212B6B1ED0 /* prodLaunchScreen.storyboard */,
+				D6C51B4E51B52EFC51A679A8 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +214,7 @@
 				87718B84D8CD45FA7D2D959A /* devLaunchScreen.storyboard in Resources */,
 				38D6C64377082134F8D0FCCD /* stagingLaunchScreen.storyboard in Resources */,
 				0B227FBF361D3CC95FA9E00C /* prodLaunchScreen.storyboard in Resources */,
+				04089AC647A793993C7E4B5B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
