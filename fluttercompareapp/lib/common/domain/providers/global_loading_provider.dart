@@ -2,8 +2,8 @@
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../presentation/base_loading_indicator.dart';
-import '../../presentation/base_widget.dart';
+import '../../presentation/widgets/base_loading_indicator.dart';
+import '../../presentation/widgets/base_widget.dart';
 
 ///[globalLoadingProvider] can be used to show the loading indicator without updating [BaseStateNotifier]
 ///state. The entire app is wrapped in [BaseWidget] and [BaseLoadingIndicator] can be shown above entire

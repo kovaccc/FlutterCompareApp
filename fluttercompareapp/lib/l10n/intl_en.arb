@@ -1,5 +1,11 @@
 {
     "@@locale": "en",
     "unknown_error_occurred": "Unknown error occurred",
-    "permission_denied": "Permission has been denied, please enable it in device settings"
+    "permission_denied": "Permission has been denied, please enable it in device settings",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "already_have_account_log_in": "Already have account? Log in!",
+    "do_not_have_account_sign_up": "Do not have account? Sign up!",
+    "log_in": "Login"
 }

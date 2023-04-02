@@ -5,14 +5,14 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loggy/loggy.dart';
 import 'package:shake/shake.dart';
 
-import '../../main/app_environment.dart';
-import '../domain/entities/failure.dart';
-import '../domain/providers/base_router_provider.dart';
-import '../domain/providers/global_failure_provider.dart';
-import '../domain/providers/global_loading_provider.dart';
-import '../domain/providers/navigation_provider.dart';
-import '../domain/router/route_action.dart';
-import '../utils/q_logger.dart';
+import '../../../main/app_environment.dart';
+import '../../domain/entities/failure.dart';
+import '../../domain/providers/base_router_provider.dart';
+import '../../domain/providers/global_failure_provider.dart';
+import '../../domain/providers/global_loading_provider.dart';
+import '../../domain/providers/navigation_provider.dart';
+import '../../domain/router/route_action.dart';
+import '../../utils/q_logger.dart';
 import 'base_loading_indicator.dart';
 
 class BaseWidget extends ConsumerStatefulWidget {

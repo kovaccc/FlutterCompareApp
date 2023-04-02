@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:fluttercompareapp/features/authorization/data/repositories/auth_repository.dart';
+import 'package:fluttercompareapp/common/data/repositories/auth_repository.dart';
 import 'package:fluttercompareapp/common/data/api_client.dart';
 
 

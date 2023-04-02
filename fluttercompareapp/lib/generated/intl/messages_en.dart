@@ -22,8 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "already_have_account_log_in": MessageLookupByLibrary.simpleMessage(
+            "Already have account? Log in!"),
+        "do_not_have_account_sign_up": MessageLookupByLibrary.simpleMessage(
+            "Do not have account? Sign up!"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "log_in": MessageLookupByLibrary.simpleMessage("Login"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "permission_denied": MessageLookupByLibrary.simpleMessage(
             "Permission has been denied, please enable it in device settings"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
         "unknown_error_occurred":
             MessageLookupByLibrary.simpleMessage("Unknown error occurred")
       };

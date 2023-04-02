@@ -10,7 +10,7 @@ import 'package:loggy/loggy.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'common/domain/providers/base_router_provider.dart';
-import 'common/presentation/base_widget.dart';
+import 'common/presentation/widgets/base_widget.dart';
 import 'common/utils/custom_provider_observer.dart';
 import 'common/utils/q_logger.dart';
 import 'generated/l10n.dart';

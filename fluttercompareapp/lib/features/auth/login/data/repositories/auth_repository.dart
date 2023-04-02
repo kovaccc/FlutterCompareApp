@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttercompareapp/common/data/providers.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:fluttercompareapp/common/domain/either_failure_or.dart';
@@ -8,7 +10,10 @@ import 'package:loggy/loggy.dart';
 import 'package:fluttercompareapp/common/domain/entities/failure.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
-  return AuthRepositoryImpl();
+  return AuthRepositoryImpl(
+    ref.watch(firestoreProvider),
+    ref.watch(firebaseAuthProvider),
+  );
 });
 
 abstract class AuthRepository {
@@ -16,13 +21,19 @@ abstract class AuthRepository {
 
   EitherFailureOr<UserCredential> signIn(String email, String password);
 
-  EitherFailureOr<None> signOut(String email, String password);
+  EitherFailureOr<None> signOut();
 
-  Stream<User?> getFirebaseUserStream();
+  Stream<User?> subscribeToAuthChanges();
 }
 
 class AuthRepositoryImpl implements AuthRepository {
-  AuthRepositoryImpl();
+  final FirebaseFirestore _firebaseFirestore;
+  final FirebaseAuth _firebaseAuth;
+
+  AuthRepositoryImpl(
+    this._firebaseFirestore,
+    this._firebaseAuth,
+  );
 
   @override
   EitherFailureOr<UserCredential> register(
@@ -30,8 +41,7 @@ class AuthRepositoryImpl implements AuthRepository {
     String password,
   ) async {
     try {
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final credential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -55,7 +65,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   EitherFailureOr<UserCredential> signIn(String email, String password) async {
     try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final credential = await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -77,9 +87,9 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  EitherFailureOr<None> signOut(String email, String password) async {
+  EitherFailureOr<None> signOut() async {
     try {
-      await FirebaseAuth.instance.signOut();
+      await _firebaseAuth.signOut();
       return const Right(None());
     } on FirebaseAuthException catch (error, stackTrace) {
       return Left(
@@ -93,7 +103,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Stream<User?> getFirebaseUserStream() {
-    return FirebaseAuth.instance.authStateChanges().asBroadcastStream();
+  Stream<User?> subscribeToAuthChanges() {
+    return _firebaseAuth.authStateChanges();
   }
 }
