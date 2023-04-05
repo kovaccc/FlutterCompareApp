@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercompareapp/features/auth/login/domain/notifiers/auth_notifier.dart';

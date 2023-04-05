@@ -1,5 +1,4 @@
 import 'package:beamer/beamer.dart';
-import 'package:fluttercompareapp/common/domain/router/beamer_guards.dart';
 import 'package:fluttercompareapp/features/auth/login/presentation/login_page.dart';
 import 'package:fluttercompareapp/features/auth/register/presentation/register_page.dart';
 import 'package:fluttercompareapp/features/home/presentation/pages/home_page.dart';

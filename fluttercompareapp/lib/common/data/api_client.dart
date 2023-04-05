@@ -1,6 +1,7 @@
 // ignore_for_file: always_use_package_imports
 
 import 'package:dio/dio.dart';
+import 'package:fluttercompareapp/features/photos/data/models/photo_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../example/data/models/example_user_response.dart';
@@ -13,4 +14,7 @@ abstract class ApiClient {
 
   @POST('/token')
   Future<ExampleUserResponse> getUser();
+
+  @GET('/photos')
+  Future<List<PhotoResponse>> getPhotos();
 }

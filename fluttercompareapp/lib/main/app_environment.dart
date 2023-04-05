@@ -3,19 +3,19 @@ enum AppEnvironment {
   DEV(
     env: 'dev',
     appTitle: 'App Dev',
-    apiBaseUrl: 'API_BASE_DEV',
+    apiBaseUrl: 'https://jsonplaceholder.typicode.com',
     assetBaseUrl: 'ASSET_BASE_DEV',
   ),
   PROD(
     env: 'prod',
     appTitle: 'App Prod',
-    apiBaseUrl: 'API_BASE_PROD',
+    apiBaseUrl: 'https://jsonplaceholder.typicode.com',
     assetBaseUrl: 'ASSET_BASE_PROD',
   ),
   STAGING(
     env: 'staging',
     appTitle: 'App Staging',
-    apiBaseUrl: 'API_BASE_STAGING',
+    apiBaseUrl: 'https://jsonplaceholder.typicode.com',
     assetBaseUrl: 'ASSET_BASE_STAGING',
   );
 

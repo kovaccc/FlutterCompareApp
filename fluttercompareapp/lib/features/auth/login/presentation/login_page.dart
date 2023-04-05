@@ -35,6 +35,7 @@ class LoginPage extends ConsumerWidget {
     ref.listen(loginNotifierProvider, (previous, next) {
       next.maybeMap(
         data: (data) {
+
           ref.pushReplacementNamed(NavBar.routeName);
         },
         error: (data) {
