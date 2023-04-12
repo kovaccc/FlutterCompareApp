@@ -20,6 +20,6 @@ class PhotosNotifier extends BaseStateNotifier<List<Photo>> {
   PhotosNotifier(this._photosRepository, super.ref);
 
   void getPhotos() => execute(
-        _photosRepository.getPhotos(),
+        _photosRepository.refreshPhotos(),
       );
 }
