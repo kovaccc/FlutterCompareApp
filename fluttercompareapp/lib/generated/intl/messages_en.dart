@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "permission_denied": MessageLookupByLibrary.simpleMessage(
             "Permission has been denied, please enable it in device settings"),
+        "photo_detail": MessageLookupByLibrary.simpleMessage("Photo detail"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "unknown_error_occurred":
             MessageLookupByLibrary.simpleMessage("Unknown error occurred")

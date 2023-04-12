@@ -7,5 +7,6 @@
     "password": "Password",
     "already_have_account_log_in": "Already have account? Log in!",
     "do_not_have_account_sign_up": "Do not have account? Sign up!",
-    "log_in": "Login"
+    "log_in": "Login",
+    "photo_detail": "Photo detail"
 }

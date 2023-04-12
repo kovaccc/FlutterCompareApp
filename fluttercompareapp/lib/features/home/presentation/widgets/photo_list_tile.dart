@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttercompareapp/common/domain/router/navigation_extensions.dart';
 import 'package:fluttercompareapp/common/presentation/app_sizes.dart';
 import 'package:fluttercompareapp/common/presentation/widgets/text/body_text.dart';
+import 'package:fluttercompareapp/features/photo_detail/presentation/photo_detail_page.dart';
 import 'package:fluttercompareapp/features/photos/domain/entities/photo.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -16,6 +18,9 @@ class PhotoListTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
+      onTap: () {
+        ref.pushNamed(PhotoDetailPage.routeName, data: photo.url);
+      },
       leading: CachedNetworkImage(
         height: AppSizes.mediumSpacing,
         width: AppSizes.mediumSpacing,

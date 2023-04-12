@@ -1,6 +1,7 @@
 // ignore_for_file: always_use_package_imports
 
 import 'package:beamer/beamer.dart';
+import 'package:fluttercompareapp/features/photo_detail/presentation/photo_detail_page.dart';
 import 'package:fluttercompareapp/features/splash/presentation/page/splash_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:fluttercompareapp/common/domain/router/beamer_guards.dart';
@@ -23,6 +24,8 @@ final baseRouterProvider = Provider<BaseRouter>((ref) {
           LoginPage.routeName: (context, state, data) => LoginPage(),
           RegisterPage.routeName: (context, state, data) => RegisterPage(),
           NavBar.routeName: (context, state, data) => const NavBar(),
+          PhotoDetailPage.routeName: (context, state, data) =>
+              PhotoDetailPage(imageUrl: data as String),
         },
       ),
       guards: beamerGuards(ref),
