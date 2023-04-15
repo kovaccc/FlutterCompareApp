@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  geolocator_windows
   sentry_flutter
   sqlite3_flutter_libs
 )
