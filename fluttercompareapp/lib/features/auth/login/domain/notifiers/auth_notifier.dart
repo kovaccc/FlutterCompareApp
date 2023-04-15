@@ -20,7 +20,6 @@ class AuthNotifier extends BaseStateNotifier<bool> {
   Future<void> listenAuthChanges() async {
     _authRepository.subscribeToAuthChanges().listen(
       (user) {
-        logInfo('matej1 $user');
         if (user != null) {
           state = const BaseState.data(true);
         } else {

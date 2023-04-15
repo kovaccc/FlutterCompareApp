@@ -6,7 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MapPage extends ConsumerStatefulWidget {
-  static const routeName = '/devices';
+  static const routeName = '/map';
 
   const MapPage({
     Key? key,
@@ -19,31 +19,42 @@ class MapPage extends ConsumerStatefulWidget {
 class _MapPageState extends ConsumerState<MapPage> {
   final Completer<GoogleMapController> _controller =
       Completer<GoogleMapController>();
+  late StreamSubscription<Position> positionStream;
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      getUserCurrentLocation().then((value) async {
-        CameraPosition cameraPosition = CameraPosition(
-          target: LatLng(value.latitude, value.longitude),
-          zoom: 14,
-        );
-
-        final GoogleMapController controller = await _controller.future;
-        controller
-            .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
-      });
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      getUserCurrentLocation();
     });
     super.initState();
   }
 
-  Future<Position> getUserCurrentLocation() async {
+  void _listenToLocationChanges() {
+    positionStream =
+        Geolocator.getPositionStream().listen((Position value) async {
+      CameraPosition cameraPosition = CameraPosition(
+        target: LatLng(value.latitude, value.longitude),
+        zoom: 14,
+      );
+
+      final GoogleMapController controller = await _controller.future;
+      controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+    });
+  }
+
+  @override
+  void dispose() {
+    positionStream.cancel();
+    super.dispose();
+  }
+
+  Future<void> getUserCurrentLocation() async {
     await Geolocator.requestPermission()
         .then((value) {})
         .onError((error, stackTrace) async {
       await Geolocator.requestPermission();
     });
-    return await Geolocator.getCurrentPosition();
+    _listenToLocationChanges();
   }
 
   @override

@@ -3,7 +3,8 @@ import 'package:fluttercompareapp/common/domain/router/base_router.dart';
 import 'package:fluttercompareapp/features/auth/login/domain/notifiers/auth_notifier.dart';
 import 'package:fluttercompareapp/features/auth/login/presentation/login_page.dart';
 import 'package:fluttercompareapp/features/auth/register/presentation/register_page.dart';
-import 'package:fluttercompareapp/features/navbar/presentation/pages/nav_bar.dart';
+import 'package:fluttercompareapp/features/home/presentation/pages/home_page.dart';
+import 'package:fluttercompareapp/features/map/presentation/map_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 List<BeamGuard> beamerGuards(ProviderRef<BaseRouter> ref) {
@@ -14,10 +15,10 @@ List<BeamGuard> beamerGuards(ProviderRef<BaseRouter> ref) {
         LoginPage.routeName,
       ],
       check: (context, location) => !_isLoggedIn(ref),
-      beamToNamed: (_, __) => NavBar.routeName,
+      beamToNamed: (_, __) => HomePage.routeName,
     ),
     BeamGuard(
-      pathPatterns: ['${NavBar.routeName}*'],
+      pathPatterns: ['${HomePage.routeName}*, ${MapPage.routeName}*'],
       check: (context, location) => _isLoggedIn(ref),
       beamToNamed: (_, __) => RegisterPage.routeName,
     ),
