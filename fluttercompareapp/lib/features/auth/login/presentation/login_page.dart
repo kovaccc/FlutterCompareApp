@@ -10,7 +10,7 @@ import 'package:fluttercompareapp/common/presentation/extensions/form_key_extens
 import 'package:fluttercompareapp/common/presentation/widgets/main_scaffold.dart';
 import 'package:fluttercompareapp/features/auth/login/domain/notifiers/login_notifier.dart';
 import 'package:fluttercompareapp/features/auth/login/forms/login_form.dart';
-import 'package:fluttercompareapp/features/home/presentation/pages/home_page.dart';
+import 'package:fluttercompareapp/features/photos/presentation/pages/home_page.dart';
 import 'package:fluttercompareapp/generated/l10n.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

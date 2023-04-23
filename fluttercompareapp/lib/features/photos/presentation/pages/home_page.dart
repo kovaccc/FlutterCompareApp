@@ -6,9 +6,9 @@ import 'package:fluttercompareapp/common/presentation/widgets/main_scaffold.dart
 import 'package:fluttercompareapp/common/presentation/widgets/text/body_text.dart';
 import 'package:fluttercompareapp/features/auth/login/domain/notifiers/auth_notifier.dart';
 import 'package:fluttercompareapp/features/auth/login/domain/providers/user_provider.dart';
-import 'package:fluttercompareapp/features/home/presentation/widgets/photo_list_tile.dart';
 import 'package:fluttercompareapp/features/map/presentation/map_page.dart';
 import 'package:fluttercompareapp/features/photos/domain/notifiers/photos_notifier.dart';
+import 'package:fluttercompareapp/features/photos/presentation/widgets/photo_list_tile.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class HomePage extends ConsumerStatefulWidget {

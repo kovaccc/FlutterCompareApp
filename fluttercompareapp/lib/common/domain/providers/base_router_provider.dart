@@ -3,12 +3,12 @@
 import 'package:beamer/beamer.dart';
 import 'package:fluttercompareapp/features/map/presentation/map_page.dart';
 import 'package:fluttercompareapp/features/photo_detail/presentation/photo_detail_page.dart';
+import 'package:fluttercompareapp/features/photos/presentation/pages/home_page.dart';
 import 'package:fluttercompareapp/features/splash/presentation/page/splash_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:fluttercompareapp/common/domain/router/beamer_guards.dart';
 import 'package:fluttercompareapp/features/auth/login/presentation/login_page.dart';
 import 'package:fluttercompareapp/features/auth/register/presentation/register_page.dart';
-import 'package:fluttercompareapp/features/home/presentation/pages/home_page.dart';
 
 import '../router/base_router.dart';
 
@@ -18,7 +18,7 @@ final baseRouterProvider = Provider<BaseRouter>((ref) {
       initialPath: SplashPage.routeName,
       locationBuilder: RoutesLocationBuilder(
         routes: {
-          '/': (context, state, data) => HomePage(),
+          '/': (context, state, data) => const HomePage(),
           SplashPage.routeName: (context, state, data) => const SplashPage(),
           HomePage.routeName: (context, state, data) => const HomePage(),
           LoginPage.routeName: (context, state, data) => LoginPage(),

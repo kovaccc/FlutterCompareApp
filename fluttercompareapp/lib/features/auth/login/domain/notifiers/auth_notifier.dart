@@ -2,7 +2,6 @@ import 'package:fluttercompareapp/common/domain/notifiers/base_state.dart';
 import 'package:fluttercompareapp/common/domain/notifiers/base_state_notifier.dart';
 import 'package:fluttercompareapp/features/auth/login/data/repositories/auth_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loggy/loggy.dart';
 
 final authNotifierProvider =
     StateNotifierProvider<AuthNotifier, BaseState<bool>>(

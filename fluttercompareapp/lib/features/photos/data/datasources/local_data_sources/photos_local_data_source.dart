@@ -1,3 +1,4 @@
+import 'package:drift/drift.dart';
 import 'package:fluttercompareapp/common/data/mappers/entity_mapper.dart';
 import 'package:fluttercompareapp/features/photos/data/database/app_database.dart';
 import 'package:fluttercompareapp/features/photos/data/mappers/photo_database_mapper.dart';
@@ -24,7 +25,7 @@ class PhotosLocalDataSource {
     for (var photo in photos) {
       await _appDatabase
           .into(_appDatabase.photos)
-          .insert(_photoDatabaseMapper(photo));
+          .insert(_photoDatabaseMapper(photo), mode: InsertMode.insertOrReplace);
     }
   }
 

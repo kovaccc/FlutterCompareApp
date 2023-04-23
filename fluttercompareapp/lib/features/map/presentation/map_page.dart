@@ -30,8 +30,10 @@ class _MapPageState extends ConsumerState<MapPage> {
   }
 
   void _listenToLocationChanges() {
-    positionStream =
-        Geolocator.getPositionStream().listen((Position value) async {
+    positionStream = Geolocator.getPositionStream(
+      locationSettings:
+          const LocationSettings(timeLimit: Duration(milliseconds: 5000)),
+    ).listen((Position value) async {
       CameraPosition cameraPosition = CameraPosition(
         target: LatLng(value.latitude, value.longitude),
         zoom: 14,

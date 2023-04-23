@@ -17,9 +17,7 @@ class $PhotosTable extends Photos with TableInfo<$PhotosTable, Photo> {
   @override
   late final GeneratedColumn<String> title = GeneratedColumn<String>(
       'title', aliasedName, false,
-      additionalChecks: GeneratedColumn.checkTextLength(),
-      type: DriftSqlType.string,
-      requiredDuringInsert: true);
+      type: DriftSqlType.string, requiredDuringInsert: true);
   static const VerificationMeta _urlMeta = const VerificationMeta('url');
   @override
   late final GeneratedColumn<String> url = GeneratedColumn<String>(

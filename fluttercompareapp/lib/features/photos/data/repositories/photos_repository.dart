@@ -12,6 +12,7 @@ import 'package:fluttercompareapp/common/data/providers.dart';
 import 'package:fluttercompareapp/common/domain/either_failure_or.dart';
 import 'package:fluttercompareapp/features/photos/data/database/app_database.dart'
     as db;
+import 'package:loggy/loggy.dart';
 
 final photosRepositoryProvider = Provider<PhotosRepository>((ref) {
   return PhotosRepositoryImpl(
@@ -57,7 +58,6 @@ class PhotosRepositoryImpl
         await readFromDatabaseTrace.start();
         final localPhotos = await _photosLocalDataSource.getPhotos();
         await readFromDatabaseTrace.stop();
-
         final domainPhotos = localPhotos.map(_photoMapper).toList();
         return Right(domainPhotos);
       });

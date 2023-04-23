@@ -5,16 +5,11 @@ import 'package:fluttercompareapp/features/photos/data/datasources/remote_data_s
 import 'package:fluttercompareapp/features/photos/data/models/photo_response.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../../example/data/models/example_user_response.dart';
-
 part 'api_client.g.dart';
 
 @RestApi()
 abstract class ApiClient implements PhotosRemoteDataSource {
   factory ApiClient(Dio dio) = _ApiClient;
-
-  @POST('/token')
-  Future<ExampleUserResponse> getUser();
 
   @override
   @GET('/photos')

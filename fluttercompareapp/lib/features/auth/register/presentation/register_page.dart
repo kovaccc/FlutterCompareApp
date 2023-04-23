@@ -11,10 +11,11 @@ import 'package:fluttercompareapp/common/presentation/widgets/main_scaffold.dart
 import 'package:fluttercompareapp/features/auth/login/presentation/login_page.dart';
 import 'package:fluttercompareapp/features/auth/register/domain/notifiers/register_notifier.dart';
 import 'package:fluttercompareapp/features/auth/register/forms/register_form.dart';
-import 'package:fluttercompareapp/features/home/presentation/pages/home_page.dart';
 import 'package:fluttercompareapp/generated/l10n.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../photos/presentation/pages/home_page.dart';
 
 final isNextEnabled = StateProvider<bool>((_) => false);
 
